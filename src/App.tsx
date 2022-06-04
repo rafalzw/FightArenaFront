@@ -5,6 +5,7 @@ import {Header} from "./components/Header";
 import { CreateWarrior } from './pages/CreateWarrior/CreateWarrior';
 import './App.css';
 import { FightArena } from './pages/FightArena/FightArena';
+import {HallOfFame} from "./pages/HallOfFame/HallOfFame";
 
 export const App = () => (
     <div className="App overflow-auto">
@@ -14,6 +15,7 @@ export const App = () => (
                 <Routes>
                     <Route path="/create-warrior" element={<CreateWarrior/>}/>
                     <Route path="/fight-arena" element={<FightArena/>}/>
+                    <Route path="/hall-of-fame" element={<HallOfFame/>}/>
                     <Route path="/" element={<Home/>}/>
                 </Routes>
             </div>
