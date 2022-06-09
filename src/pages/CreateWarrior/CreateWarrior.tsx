@@ -19,7 +19,7 @@ export const CreateWarrior = () => {
 
     const totalPoints = ([...stats]: number[]) => stats.reduce((prev, curr) => prev - curr, 10);
 
-    const changeInput = (item: string, value: number | string) =>  (setForm({...form, [item]: value}));
+    const changeInput = (item: string, value: number | string) =>  (setForm({...form, [item.toLowerCase()]: value}));
 
     const submit = async (e: FormEvent) => {
         e.preventDefault();
@@ -67,25 +67,25 @@ export const CreateWarrior = () => {
                 </div>
 
                 <WarriorStatsInput
-                    name={'power'}
+                    name={'Power'}
                     value={form.power}
                     sumOfPoints={sumOfPoints}
                     changeStats={changeInput}/>
 
                 <WarriorStatsInput
-                    name={'defence'}
+                    name={'Defence'}
                     value={form.defence}
                     sumOfPoints={sumOfPoints}
                     changeStats={changeInput}/>
 
                 <WarriorStatsInput
-                    name={'endurance'}
+                    name={'Endurance'}
                     value={form.endurance}
                     sumOfPoints={sumOfPoints}
                     changeStats={changeInput}/>
 
                 <WarriorStatsInput
-                    name={'agility'}
+                    name={'Agility'}
                     value={form.agility}
                     sumOfPoints={sumOfPoints}
                     changeStats={changeInput}/>

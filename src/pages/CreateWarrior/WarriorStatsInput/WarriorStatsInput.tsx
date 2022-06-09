@@ -11,7 +11,7 @@ export const WarriorStatsInput = (props: Props) => {
 
     return (
         <div className="form-group col-md-2">
-            <label htmlFor="power" className="col-sm-2 col-form-label">Power:</label>
+            <label htmlFor={props.name} className="col-sm-2 col-form-label">{props.name}:</label>
             <div className="col-sm-10">
                 <input required
                        value={props.value}
