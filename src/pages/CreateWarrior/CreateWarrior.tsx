@@ -3,6 +3,7 @@ import {WarriorStatsInput} from "./WarriorStatsInput/WarriorStatsInput";
 import {WarriorNameInput} from "./WarriorNameInput/WarriorNameInput";
 import {WarriorEntity} from "types";
 import {WarriorAdded} from "./WarriorAdded/WarriorAdded";
+import {apiUrl} from "../../config/api";
 
 export const CreateWarrior = () => {
     const [form, setForm] = useState<WarriorEntity>({
@@ -23,7 +24,7 @@ export const CreateWarrior = () => {
     const submit = async (e: FormEvent) => {
         e.preventDefault();
 
-        const res = await fetch("http://localhost:3001/create-warrior", {
+        const res = await fetch(`${apiUrl}/create-warrior`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

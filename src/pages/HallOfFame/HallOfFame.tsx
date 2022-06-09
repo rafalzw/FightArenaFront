@@ -1,5 +1,6 @@
 import {useEffect, useState} from "react";
 import {Records} from "./Records";
+import {apiUrl} from "../../config/api";
 
 interface ListTop {
     id: string;
@@ -12,7 +13,7 @@ export const HallOfFame = () => {
 
     useEffect(() => {
         (async() => {
-            const res = await fetch("http://localhost:3001/hall-of-fame")
+            const res = await fetch(`${apiUrl}/hall-of-fame`)
             const data = await res.json()
             setData(data);
         })();

@@ -2,6 +2,7 @@ import {FormEvent, useEffect, useState} from "react";
 import {SelectWarrior} from "./SelectWarrior/SelectWarrior";
 import {WarriorEntity} from "types";
 import {FightDetails} from "./FightDetails/FightDetails";
+import {apiUrl} from "../../config/api";
 
 interface Result {
     fightDetails: string[];
@@ -17,7 +18,7 @@ export function FightArena() {
 
     useEffect(() => {
         (async () => {
-            const res = await fetch("http://localhost:3001/fight-arena")
+            const res = await fetch(`${apiUrl}/fight-arena`)
             const data = await res.json()
             setData(data);
         })()
@@ -26,7 +27,7 @@ export function FightArena() {
     const submit = async (e: FormEvent) => {
         e.preventDefault();
 
-        const res = await fetch("http://localhost:3001/fight-arena/fight", {
+        const res = await fetch(`${apiUrl}/fight-arena/fight`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
